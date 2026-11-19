@@ -1,0 +1,8 @@
+/Users/jules/Documents
+/Users/jules/Pictures
+/Users/jules/Desktop
+/Users/jules/.config
+/Users/jules/tmp
+/Users/jules/backups
+/Users/jules/dotfiles
+/Users/jules/Developer
