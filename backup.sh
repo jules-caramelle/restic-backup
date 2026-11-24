@@ -30,10 +30,10 @@ echo "internet connecté"
 
 #Lancement de la backup
 caffeinate -sm restic -r "${URL}" backup  \
-       --files-from "${INCLUDES_FILE}" \
-       --exclude-file "${EXCLUDES_FILE}" \
-       --exclude-larger-than 10G \
-       --verbose
+	--files-from "${INCLUDES_FILE}" \
+	--exclude-file "${EXCLUDES_FILE}" \
+	--exclude-larger-than 10G \
+	--verbose
 
 #Purge des anciennes backup
 #/!\ à laisser APRES la backup.
