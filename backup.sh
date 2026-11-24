@@ -16,9 +16,33 @@ else
 fi
 
 #Ajout d'un d'élai pour assurer une connexion internet
-if [[ -z $@ ]]; then
-	sleep 2m
+WAIT="2m"
+
+if [[ ! -z $@ ]]; then
+	case "$1" in
+		"ls")
+			restic -r ${URL} snapshots
+			exit 0
+			;;
+		"snapshots")
+			restic -r ${URL} snapshots
+			exit 0
+			;;
+		"ps")
+			restic -r ${URL} snapshots
+			exit 0
+			;;
+		"list")
+			restic -r ${URL} snapshots
+			exit 0
+			;;
+		"fast")
+			WAIT="0s"
+			;;
+	esac
 fi
+
+sleep "${WAIT}"
 
 #Vérification d'une connexion internet
 if ! ping -c 1 -t 5 1.1.1.1 >/dev/null 2>&1; then
